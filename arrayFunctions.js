@@ -78,14 +78,11 @@ getDuplicateCount(1, [1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 10, 11, 1, 12, 13]);
  */
 function youGottaCalmDown(s) {
   // Your code here
-  for (let i = 0; i < s.length; i++)
-    if (s[i] == "!") {
-      let strs = [s];
-      s.slice(0, i);
-      console.log(`${strs}!`);
-    }
+  while (s.endsWith("!!")) {
+    s = s.slice(0, -1);
+  }
   return s;
 }
-youGottaCalmDown("Hellooooo!!!!!");
+youGottaCalmDown("Heloo!!!!!!!!!!!");
 
 module.exports = { getOdds, getEvens, getDuplicateCount, youGottaCalmDown };
